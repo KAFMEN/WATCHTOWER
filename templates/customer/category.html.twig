@@ -1,0 +1,32 @@
+{% extends 'customer/base.html.twig' %}
+
+{% block title %}
+Cours Symfony
+{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="row">
+        
+            {% include "customer/_messages_flash.html.twig" %}
+
+
+                        <h2>mes categorie</h2>
+            
+            {% for category in categories %}
+                <div class="col-4">
+                    <div class="card" >
+                        <img src="{{ category.image }}" class="card-img-top w-100 imageCard"  alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ category.name }}</h5>
+                             
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
